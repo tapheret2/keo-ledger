@@ -17,3 +17,7 @@ keo = "keo_ledger.cli:app"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
