@@ -1,5 +1,7 @@
 # keo-ledger
 
+![status](https://img.shields.io/badge/status-active-brightgreen) ![python](https://img.shields.io/badge/python-3.10%2B-blue) ![license](https://img.shields.io/badge/license-MIT-lightgrey)
+
 Football **tip ledger** for students who collect kèo as files (1 file = 1 leg).
 
 Parse ticket filenames, store CSV, settle W/L, report winrate by tipster.
