@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "keo-ledger"
+version = "0.1.0"
+description = "Track football tip tickets from filenames + settle winrates (DS-friendly ledger)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Phạm Tiến Phát" }]
+dependencies = ["rich>=13.7", "typer>=0.12", "pydantic>=2.6"]
+
+[project.scripts]
+keo = "keo_ledger.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
