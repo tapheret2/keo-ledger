@@ -77,3 +77,17 @@ def winrate(results: list[str]) -> dict[str, Any]:
             points += 0.0
         # L = 0
     return {"n": n, "points": points, "winrate": (points / n) if n else None}
+
+def profit_units(stake: float, decimal_odds: float, won: bool) -> float:
+    """Profit (not payout) in units: won -> stake*(odds-1), lost -> -stake."""
+    if stake < 0:
+        raise ValueError("stake must be >= 0")
+    if decimal_odds <= 1.0:
+        raise ValueError("decimal_odds must be > 1")
+    return stake * (decimal_odds - 1.0) if won else -stake
+
+
+def roi(profit: float, staked: float) -> float:
+    if staked <= 0:
+        raise ValueError("staked must be > 0")
+    return profit / staked
