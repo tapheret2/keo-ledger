@@ -78,3 +78,15 @@ def report(csv_path: Path = typer.Argument(Path("tickets.csv"))) -> None:
 
 if __name__ == "__main__":
     app()
+
+
+def units_from_stake(stake: float, unit_size: float) -> float:
+    if unit_size <= 0:
+        raise ValueError("unit_size must be positive")
+    return stake / unit_size
+
+
+def settle_pnl(stake: float, decimal_odds: float, won: bool) -> float:
+    if won:
+        return stake * (decimal_odds - 1.0)
+    return -stake
